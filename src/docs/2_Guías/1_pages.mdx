@@ -1,0 +1,43 @@
+---
+title: Agregar páginas
+description: Todos los archivos con la extensión md y mdx que agregues en tu carpeta docs se convertirá automaticamente en una página.
+displayName: Agrega páginas
+---
+
+import { Alert } from "@iannacus/dimacheri/extra-components"
+
+Entonces debemos preocuparnos por dos cosas 
+- Cómo accedes a las páginas generadas
+- Qué debes incluir en tu archivo
+
+Tu proyecto tiene una Estructura como la siguiente: 
+
+En la carpeta de docs crearás los archivos con la extensión md o mdx.
+
+Si creas el archivo: descripción.md
+
+La url para acceder a el será: "/descripcion"
+
+<Alert type="tip">
+Igual puedes crear nuevas secciones agregando carpetas dentro de la carpeta contenido. 
+
+Si creas una carpeta llamada Guias y dentro de ella un archivo styles.md
+
+La ruta que se genera es: /guias/styles
+</Alert> 
+
+## Composición de la url
+La url se construye tomando el nombre del archivo que estas creando. 
+
+Si creas una carpeta para agrupar contenido, el nobbre de la carpeta sera usado en la url. 
+Entonces la url es: **nombre_carpeta/nombre_archivo**
+
+<Alert type="tip">
+Puedes crear tantas carpetas como necesites. 
+
+Puedes anidar tantas carpetas como necesites.
+</Alert>
+
+
+## Estructura del archivo
+

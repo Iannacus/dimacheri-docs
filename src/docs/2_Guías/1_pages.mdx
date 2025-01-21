@@ -4,24 +4,55 @@ description: Todos los archivos con la extensión md y mdx que agregues en tu ca
 displayName: Agrega páginas
 ---
 
-import { Alert } from "@iannacus/dimacheri/extra-components"
+import { Alert, FileTree, Code } from "@iannacus/dimacheri/extra-components"
 
-Entonces debemos preocuparnos por dos cosas 
-- Cómo accedes a las páginas generadas
-- Qué debes incluir en tu archivo
+## Agregando una página
 
 Tu proyecto tiene una Estructura como la siguiente: 
 
-En la carpeta de docs crearás los archivos con la extensión md o mdx.
+<FileTree tree={{
+    public: {type: 'dir'},
+    src: { type: 'dir', items: {
+        docs: { type: 'dir'},
+        "content.config.ts": {type: "file"},
+      }},
+    "astro.config.mjs": {type: 'file'}
+  }} />
+
+Si creas un archivo dentro de la carpeta docs este generará una url autómaticamente tomando el nombre del archivo.
 
 Si creas el archivo: descripción.md
+
+<FileTree tree={{
+    public: {type: 'dir'},
+    src: { type: 'dir', items: {
+        docs: { type: 'dir', items: {
+            "descripcion.md": {type: 'file'},
+          }},
+        "content.config.ts": {type: "file"},
+      }},
+    "astro.config.mjs": {type: 'file'}
+  }}
+/>
 
 La url para acceder a el será: "/descripcion"
 
 <Alert type="tip">
-Igual puedes crear nuevas secciones agregando carpetas dentro de la carpeta contenido. 
+Igual puedes crear nuevas secciones agregando carpetas dentro de la carpeta docs. 
 
 Si creas una carpeta llamada Guias y dentro de ella un archivo styles.md
+<FileTree tree={{
+    public: {type: 'dir'},
+    src: { type: 'dir', items: {
+        docs: { type: 'dir', items: {
+            "descripcion.md": {type: 'file'},
+            guias: {type: 'dir', items: {"styles.md": {type: "file"}}}
+          }},
+        "content.config.ts": {type: "file"},
+      }},
+    "astro.config.mjs": {type: 'file'}
+  }}
+/>
 
 La ruta que se genera es: /guias/styles
 </Alert> 
@@ -30,7 +61,7 @@ La ruta que se genera es: /guias/styles
 La url se construye tomando el nombre del archivo que estas creando. 
 
 Si creas una carpeta para agrupar contenido, el nobbre de la carpeta sera usado en la url. 
-Entonces la url es: **nombre_carpeta/nombre_archivo**
+Entonces la url es: **nombre_carpeta/.../nombre_archivo**
 
 <Alert type="tip">
 Puedes crear tantas carpetas como necesites. 
@@ -39,5 +70,31 @@ Puedes anidar tantas carpetas como necesites.
 </Alert>
 
 
-## Estructura del archivo
+## Contenido del archivo
+
+Para los decumentos que crearás es necesario conocer que tu archivo va a estar dividido en dos partes: 
+
+- Front Matter
+- Contenido 
+
+### Front Matter
+
+Te servirá para personalizar el contenido de las páginas. 
+
+<Alert type="warning" >
+Estos valores se deben incluir en la parte superior del docummento y 
+entre --- giuones separadores
+</Alert> 
+
+<Code lan="md" code={`
+---
+
+title: titulo de la página
+description: breve descripción del contenido
+displayName: Nombre para el menú lateral
+
+---
+
+contenido en markdown ...
+`} /> 
 

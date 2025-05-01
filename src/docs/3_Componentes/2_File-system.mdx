@@ -1,0 +1,28 @@
+---
+title: File system
+description: Muestra un sistema de archivos de manera jerarquizada.
+displayName: File system
+---
+
+import { FileSystem, Code } from "@iannacus/dimacheri/extra-components";
+import fileSystemCode from "../../code/fileSystem.js?raw";
+
+<FileSystem
+  tree={`
+
+- src/
+  -- server.ts
+  -- model/
+  --- auth.model.ts
+  -- views/
+  --- auth.view.ts
+  -- controllers/
+  --- auth.controller.ts
+  `}
+  />
+
+# Uso
+
+Para conseguir ese resultado puedes intentar con el siguiente código
+
+<Code lan="jsx" code={fileSystemCode} />

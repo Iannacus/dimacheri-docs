@@ -8,7 +8,8 @@ import { Alert, FileSystem, Code } from "@iannacus/dimacheri/extra-components";
 
 ## Agregando una página
 
-Tu proyecto tiene una Estructura como la siguiente:
+Agregar una nueva página a la documentación es tan sencillo como agregar un nuevo archivo md o mdx
+dentro del directorio /docs.
 
 <FileSystem
   tree={`
@@ -16,7 +17,7 @@ Tu proyecto tiene una Estructura como la siguiente:
 - public/
 - src/
   -- docs/
-  --- content.config.ts
+  -- content.config.ts
 - astro.config.mjs
   `}
   />{" "}
@@ -31,7 +32,7 @@ Si creas el archivo: descripción.md
 - src/
   -- docs/
   --- descripcion.md
-  -- content.ts
+  -- content.config.ts
 - astro.config.mjs
   `}
   />
@@ -65,7 +66,7 @@ La ruta que se genera es: /guias/styles
 
 La url se construye tomando el nombre del archivo que estas creando.
 
-Si creas una carpeta para agrupar contenido, el nobbre de la carpeta sera usado en la url.
+Si creas una carpeta para agrupar contenido, el nombre de la carpeta sera usado en la url.
 Entonces la url es: **nombre_carpeta/.../nombre_archivo**
 
 <Alert type="tip">
